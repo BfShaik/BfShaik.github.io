@@ -1,0 +1,83 @@
+[
+    {
+          "name": "OCI Architecture Studio",
+          "slug": "oci-architecture-studio",
+          "description": "A tool for designing and documenting Oracle Cloud Infrastructure architectures, built to speed up the way solution diagrams and design decisions get captured and shared.",
+          "tech": ["Python", "OCI"],
+          "screenshot": "assets/screenshots/oci-architecture-studio.png",
+          "github": "https://github.com/BfShaik/OCI-Architecture-Studio",
+          "status": "Active"
+    },
+    {
+          "name": "OCI MCP Server Install Handoff",
+          "slug": "oci-mcp-server-install-handoff",
+          "description": "Tooling for installing and handing off Model Context Protocol servers on Oracle Cloud Infrastructure, streamlining how AI agent tooling gets deployed and configured.",
+          "tech": ["Python", "MCP", "OCI"],
+          "screenshot": "assets/screenshots/oci-mcp-server-install-handoff.png",
+          "github": "https://github.com/BfShaik/oci-mcp-server-install-handoff",
+          "status": "Active"
+    },
+    {
+          "name": "S3 to Object Storage",
+          "slug": "s3-to-object-storage",
+          "description": "A migration utility for moving data from AWS S3 to OCI Object Storage, built to make multi cloud storage migrations simpler and repeatable.",
+          "tech": ["Python", "AWS", "OCI"],
+          "screenshot": "assets/screenshots/s3-to-object-storage.png",
+          "github": "https://github.com/BfShaik/S3toObjectStorage",
+          "status": "Active"
+    },
+    {
+          "name": "Klarity AI",
+          "slug": "klarity-ai",
+          "description": "An AI focused project exploring applied language model tooling. Details and write up in progress.",
+          "tech": ["TypeScript", "AI"],
+          "screenshot": "assets/screenshots/klarity-ai.png",
+          "github": "https://github.com/BfShaik/Klarity-AI",
+          "status": "Prototype"
+    },
+    {
+          "name": "OCI Horizon",
+          "slug": "oci-horizon",
+          "description": "An Oracle Cloud Infrastructure focused application. Details and write up in progress.",
+          "tech": ["TypeScript", "OCI"],
+          "screenshot": "assets/screenshots/oci-horizon.png",
+          "github": "https://github.com/BfShaik/OCIHorizon",
+          "status": "Prototype"
+    },
+    {
+          "name": "Neuroglass Local",
+          "slug": "neuroglass-local",
+          "description": "OCI AI Neuroglass, a local setup for running Model Context Protocol tooling alongside AI services on Oracle Cloud Infrastructure.",
+          "tech": ["TypeScript", "MCP", "OCI", "AI"],
+          "screenshot": "assets/screenshots/neuroglass-local.png",
+          "github": "https://github.com/BfShaik/neuroglass-local",
+          "status": "Prototype"
+    },
+    {
+          "name": "OCI Agents ADK Example",
+          "slug": "oci-agents-adk-example",
+          "description": "An example project working with an Agent Development Kit on Oracle Cloud Infrastructure, demonstrating patterns for building and running AI agents.",
+          "tech": ["Python", "OCI", "Agents"],
+          "screenshot": "assets/screenshots/oci-agents-adk-example.png",
+          "github": "https://github.com/BfShaik/OCIAgentsADK-Example",
+          "status": "Prototype"
+    },
+    {
+          "name": "WAF Test",
+          "slug": "waf-test",
+          "description": "A testing project for Web Application Firewall configurations and rules.",
+          "tech": ["Python", "Security"],
+          "screenshot": "assets/screenshots/waf-test.png",
+          "github": "https://github.com/BfShaik/waftest",
+          "status": "Archived"
+    },
+    {
+          "name": "Baba OKE",
+          "slug": "baba-oke",
+          "description": "An early project working with Oracle Kubernetes Engine.",
+          "tech": ["Python", "Kubernetes", "OCI"],
+          "screenshot": "assets/screenshots/baba-oke.png",
+          "github": "https://github.com/BfShaik/babaOKE",
+          "status": "Archived"
+    }
+]
