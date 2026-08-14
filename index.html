@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Baba Shaik - AI and Cloud Projects</title>
+<meta name="description" content="Personal site for Baba Shaik, Principal Cloud Architect, documenting hands on AI and cloud projects on Oracle Cloud Infrastructure.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="hero">
+  <div class="container">
+    <h1>Baba Shaik</h1>
+    <p class="role">Principal Cloud Architect, Oracle. Building and documenting AI projects on Oracle Cloud Infrastructure.</p>
+    <p class="summary">Twenty five years in enterprise cloud and software engineering, now applied to hands on work in agentic AI, Model Context Protocol tooling, and cloud migration on OCI. This site is a working record of that learning, project by project.</p>
+    <div class="links">
+      <a href="https://github.com/BfShaik" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/babashaik/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</header>
+<section id="active">
+  <div class="container">
+    <h2>Active projects</h2>
+    <p class="section-note">Currently in progress. Each links to its source repo and setup instructions.</p>
+    <div class="grid" id="active-grid"></div>
+  </div>
+</section>
+<section id="prototype">
+  <div class="container">
+    <h2>Prototypes</h2>
+    <p class="section-note">Working experiments, documented rather than kept running live.</p>
+    <div class="grid" id="prototype-grid"></div>
+  </div>
+</section>
+<section id="archived">
+  <div class="container">
+    <h2>Archive</h2>
+    <p class="section-note">Earlier projects, kept for reference.</p>
+    <div class="archive-list" id="archive-list"></div>
+  </div>
+</section>
+<footer>
+  <div class="container">
+    <p>Baba Shaik &middot; agents2.app</p>
+  </div>
+</footer>
+<script>
+async function loadProjects() {
+  const res = await fetch("projects.json");
+  const projects = await res.json();
+  const activeGrid = document.getElementById("active-grid");
+  const prototypeGrid = document.getElementById("prototype-grid");
+  const archiveList = document.getElementById("archive-list");
+  function card(p) {
+    const el = document.createElement("div");
+       el.innerHTML = `
+      <div class="thumb"><img src="${p.screenshot}" alt="${p.name} screenshot" onerror="this.parentElement.textContent='Screenshot coming soon'; this.remove();"></div>
+      <div class="card-body">
+        <h3>${p.name}</h3>
+        <p>${p.description}</p>
+        <div class="tags">${p.tech.map(t => `<span class="tag">${t}</span>`).join("")}</div>
+        <div class="card-footer">
+          <span class="status">${p.status}</span>
+          <a href="${p.github}" target="_blank" rel="noopener">View on GitHub</a>
+        </div>
+      </div>
+    `;
+    return el;
+  }
+  function archiveRow(p) {
+    const el = document.createElement("div");
+    el.className = "archive-row";
+    el.innerHTML = `
+      <span class="name">${p.name}</span>
+      <span class="meta">${p.tech.join(", ")} &middot; <a href="${p.github}" target="_blank" rel="noopener">GitHub</a></span>
+    `;
+    return el;
+  }
+  projects.forEach(p => {
+    if (p.status === "Active") activeGrid.appendChild(card(p));
+    else if (p.status === "Prototype") prototypeGrid.appendChild(card(p));
+    else archiveList.appendChild(archiveRow(p));
+  });
+  if (!activeGrid.children.length) document.getElementById("active").style.display = "none";
+  if (!prototypeGrid.children.length) document.getElementById("prototype").style.display = "none";
+  if (!archiveList.children.length) document.getElementById("archived").style.display = "none";
+}
+loadProjects();
+</script>
+</body>
+</html>
