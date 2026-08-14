@@ -36,7 +36,7 @@ body::before {
       height: 700px;
       transform: translateX(-50%);
       background: radial-gradient(closest-side, rgba(109, 140, 255, 0.28), transparent 70%),
-                        radial-gradient(closest-side, rgba(180, 107, 255, 0.22), transparent 70%);
+            radial-gradient(closest-side, rgba(180, 107, 255, 0.22), transparent 70%);
       background-position: 20% 0%, 80% 10%;
       background-repeat: no-repeat;
       filter: blur(10px);
@@ -104,19 +104,29 @@ header.hero {
       gap: 32px;
       align-items: flex-start;
 }
-.avatar {
+.avatar-block {
       flex: 0 0 auto;
-      width: 88px;
-      height: 88px;
-      border-radius: 50%;
-      background: var(--gradient);
-      color: #0b0d12;
+      width: 140px;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      font-size: 1.6rem;
-      font-weight: 800;
-      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12), 0 12px 30px rgba(109, 140, 255, 0.25);
+      gap: 10px;
+}
+.avatar {
+      width: 140px;
+      height: 175px;
+      border-radius: var(--radius);
+      object-fit: cover;
+      background: var(--gradient);
+      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1), 0 12px 30px rgba(109, 140, 255, 0.3);
+}
+.avatar-caption {
+      margin: 0;
+      text-align: center;
+      font-size: 0.78rem;
+      font-style: italic;
+      color: var(--text-muted);
+      line-height: 1.4;
 }
 .hero-text h1 {
       font-size: 2.4rem;
@@ -390,11 +400,11 @@ footer {
 }
 @media (max-width: 640px) {
       .topnav-links {
-              gap: 14px;
-              font-size: 0.8rem;
+            gap: 14px;
+            font-size: 0.8rem;
       }
       .hero-inner {
-              flex-direction: column;
-              gap: 20px;
+            flex-direction: column;
+            gap: 20px;
       }
 }
